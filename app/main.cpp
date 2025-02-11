@@ -16,7 +16,7 @@ constexpr double put_option_payoff(double S, double K)
 }
 
 // Calculate the price of a European option with Monte Carlo simulation
-double monte_carlo_option_pricer(const VanillaOption& vanilla_option, int number_of_simulations, bool isCallOption)
+double monte_carlo_option_pricer(const VanillaOption& vanilla_option, int number_of_simulations, bool is_call)
 {
     double payoff_sum { 0 };
 
@@ -27,7 +27,7 @@ double monte_carlo_option_pricer(const VanillaOption& vanilla_option, int number
         double gaussian { Random::get_gaussian(0.0, 1.0) };
 
         double ST { vanilla_option.S0() * exp(drift + diffusion * gaussian) };
-        double payoff { isCallOption ? call_option_payoff(ST, vanilla_option.K()) : put_option_payoff(ST, vanilla_option.K()) };
+        double payoff { is_call ? call_option_payoff(ST, vanilla_option.K()) : put_option_payoff(ST, vanilla_option.K()) };
         payoff_sum += payoff;
     }
 
