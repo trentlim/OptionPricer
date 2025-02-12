@@ -1,5 +1,5 @@
-#include "Random.h"
-#include "VanillaOption.h"
+#include "instruments/VanillaOption.h"
+#include "utils/Random.h"
 #include <cmath>
 #include <iostream>
 

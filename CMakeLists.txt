@@ -5,9 +5,16 @@ include_directories(include)
 
 file(GLOB APP_SOURCES "app/*.cpp")
 file(GLOB SRC_SOURCES "src/*.cpp")
-file(GLOB HEADERS "include/*.h")
 
-add_executable(OptionPricer ${APP_SOURCES} ${SRC_SOURCES} ${HEADERS})
+file(GLOB INSTRUMENTS_HEADERS "include/instruments/*.h")
+file(GLOB UTILS_HEADERS "include/utils/*.h")
+
+add_executable(OptionPricer 
+    ${APP_SOURCES} 
+    ${SRC_SOURCES} 
+    ${INSTRUMENTS_HEADERS}
+    ${UTILS_HEADERS}
+)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
