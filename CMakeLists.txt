@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.31.0)
 project(option_pricer VERSION 0.1.0 LANGUAGES C CXX)
 
 include_directories(option_pricer/instruments)
+include_directories(option_pricer/pricing)
 include_directories(option_pricer/utils)
 
 file(GLOB APP_SOURCES "option_pricer/*.cpp")
