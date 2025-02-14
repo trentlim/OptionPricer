@@ -1,16 +1,16 @@
 cmake_minimum_required(VERSION 3.31.0)
-project(option_pricer VERSION 0.1.0 LANGUAGES C CXX)
+project(OptionPricer VERSION 0.1.0 LANGUAGES C CXX)
 
-include_directories(option_pricer/instruments)
-include_directories(option_pricer/pricing)
-include_directories(option_pricer/utils)
+include_directories(OptionPricer/instruments)
+include_directories(OptionPricer/pricing)
+include_directories(OptionPricer/utils)
 
-file(GLOB APP_SOURCES "option_pricer/*.cpp")
-file(GLOB INSTRUMENTS_SOURCES "option_pricer/instruments/*.cpp")
+file(GLOB APP_SOURCES "OptionPricer/*.cpp")
+file(GLOB INSTRUMENTS_SOURCES "OptionPricer/instruments/*.cpp")
 
-file(GLOB INSTRUMENTS_HEADERS "option_pricer/instruments/*.h")
-file(GLOB UTILS_HEADERS "option_pricer/utils/*.h")
-file(GLOB PRICING_HEADERS "option_pricer/pricing/*.h")
+file(GLOB INSTRUMENTS_HEADERS "OptionPricer/instruments/*.h")
+file(GLOB UTILS_HEADERS "OptionPricer/utils/*.h")
+file(GLOB PRICING_HEADERS "OptionPricer/pricing/*.h")
 
 add_executable(OptionPricer 
     ${APP_SOURCES} 

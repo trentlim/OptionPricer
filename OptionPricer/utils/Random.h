@@ -68,7 +68,7 @@ R get(S min, T max)
     return get<R>(static_cast<R>(min), static_cast<R>(max));
 }
 
-double get_gaussian(double mean, double std_dev)
+inline double get_gaussian(double mean, double std_dev)
 {
     std::normal_distribution<double> d { mean, std_dev };
     return d(mt);
