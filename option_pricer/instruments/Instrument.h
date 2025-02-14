@@ -5,19 +5,12 @@ class Instrument {
 public:
     virtual ~Instrument() = default;
 
-    virtual double price()
-    {
-        calculate();
-        return price_;
-    }
+    // Get the price of the instrument
+    double price();
 
-    virtual void calculate()
-    {
-        if (!calculated_) {
-            perform_calculations();
-            calculated_ = true;
-        }
-    }
+    // Calculate the price of the instrument
+    // Calls perform_calculations() if not yet calculated
+    void calculate();
 
 protected:
     virtual void perform_calculations() = 0;

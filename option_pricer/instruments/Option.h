@@ -52,7 +52,7 @@ protected:
 private:
     Type type_ {}; // Call or Put
 
-    double S_ {}; // Spot price
+    double S_ {}; // Spot price of underlying
     double K_ {}; // Strike price
     double r_ {}; // Risk-free rate
     double sigma_ {}; // Volatility

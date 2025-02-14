@@ -6,6 +6,7 @@ include_directories(option_pricer/pricing)
 include_directories(option_pricer/utils)
 
 file(GLOB APP_SOURCES "option_pricer/*.cpp")
+file(GLOB INSTRUMENTS_SOURCES "option_pricer/instruments/*.cpp")
 
 file(GLOB INSTRUMENTS_HEADERS "option_pricer/instruments/*.h")
 file(GLOB UTILS_HEADERS "option_pricer/utils/*.h")
@@ -13,6 +14,7 @@ file(GLOB PRICING_HEADERS "option_pricer/pricing/*.h")
 
 add_executable(OptionPricer 
     ${APP_SOURCES} 
+    ${INSTRUMENTS_SOURCES} 
     ${INSTRUMENTS_HEADERS}
     ${UTILS_HEADERS}
     ${PRICING_HEADERS}
