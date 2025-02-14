@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.31.0)
 project(OptionPricer VERSION 0.1.0 LANGUAGES C CXX)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 include_directories(OptionPricer/instruments)
 include_directories(OptionPricer/pricing)
@@ -20,7 +21,6 @@ add_executable(OptionPricer
     ${PRICING_HEADERS}
 )
 
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_compile_options(
 -Wshadow,
