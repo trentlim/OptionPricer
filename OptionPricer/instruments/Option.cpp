@@ -31,7 +31,7 @@ void Option::perform_calculations()
         double gaussian { Random::get_gaussian(0.0, 1.0) };
 
         double ST { S_ * exp(drift + diffusion * gaussian) };
-        double payoff { type_ ? std::max(ST - K_, 0.0) : std::max(K_ - ST, 0.0) };
+        double payoff { type_ == Type::call ? std::max(ST - K_, 0.0) : std::max(K_ - ST, 0.0) };
         payoff_sum += payoff;
     }
 

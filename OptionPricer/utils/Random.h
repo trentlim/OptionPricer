@@ -70,7 +70,7 @@ R get(S min, T max)
 
 inline double get_gaussian(double mean, double std_dev)
 {
-    std::normal_distribution<double> d { mean, std_dev };
+    std::normal_distribution d { mean, std_dev };
     return d(mt);
 }
 }

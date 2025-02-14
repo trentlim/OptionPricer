@@ -7,7 +7,7 @@
 
 class Option : public Instrument {
 public:
-    enum Type {
+    enum class Type {
         put,
         call,
     };
@@ -21,7 +21,7 @@ public:
     double T() const { return T_; }
 
 protected:
-    void perform_calculations();
+    void perform_calculations() override;
 
 private:
     Type type_ {}; // Call or Put

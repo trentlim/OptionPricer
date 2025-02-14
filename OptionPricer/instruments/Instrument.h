@@ -17,8 +17,6 @@ protected:
 
     bool calculated_ {};
     double price_ {};
-
-private:
 };
 
 #endif
