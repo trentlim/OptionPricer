@@ -4,6 +4,9 @@
 #include "Instrument.h"
 #include "Random.h"
 #include <cmath>
+#include <memory>
+
+class Payoff;
 
 class Option : public Instrument {
 public:
@@ -31,6 +34,8 @@ private:
     double r_ {}; // Risk-free rate
     double sigma_ {}; // Volatility
     double T_ {}; // Time to maturity
+
+    std::shared_ptr<Payoff> payoff_ {};
 };
 
 #endif

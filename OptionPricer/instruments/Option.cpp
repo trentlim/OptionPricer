@@ -1,4 +1,6 @@
 #include "Option.h"
+#include "Payoff.h"
+#include <memory>
 #include <stdexcept>
 
 Option::Option(Type type, double S, double K, double r, double sigma, double T)
@@ -8,6 +10,7 @@ Option::Option(Type type, double S, double K, double r, double sigma, double T)
     , r_ { r }
     , sigma_ { sigma }
     , T_ { T }
+    , payoff_ { std::make_shared<Payoff>(type, K) }
 {
     if (S <= 0.0)
         throw std::invalid_argument("Underlying price S must be greater than 0.");
@@ -31,7 +34,7 @@ void Option::perform_calculations()
         double gaussian { Random::get_gaussian(0.0, 1.0) };
 
         double ST { S_ * exp(drift + diffusion * gaussian) };
-        double payoff { type_ == Type::call ? std::max(ST - K_, 0.0) : std::max(K_ - ST, 0.0) };
+        double payoff { (*payoff_)(ST) };
         payoff_sum += payoff;
     }
 
