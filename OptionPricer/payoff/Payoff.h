@@ -7,23 +7,9 @@
 
 class Payoff {
 public:
-    Payoff(Option::Type type, double strike)
-        : type_ { type }
-        , K_ { strike }
-    {
-    }
+    Payoff(Option::Type type, double strike);
 
-    double operator()(double spot) const
-    {
-        switch (type_) {
-        case Option::Type::call:
-            return std::max(spot - K_, 0.0);
-        case Option::Type::put:
-            return std::max(K_ - spot, 0.0);
-        default:
-            throw std::invalid_argument("Invalid Option Type");
-        }
-    }
+    double operator()(double spot) const;
 
 private:
     Option::Type type_ {};

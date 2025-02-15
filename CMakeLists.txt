@@ -19,6 +19,8 @@ file(GLOB PRICING_HEADERS "OptionPricer/pricing/*.h")
 add_executable(OptionPricer 
     ${APP_SOURCES} 
     ${INSTRUMENTS_SOURCES} 
+    ${PAYOFF_SOURCES} 
+
     ${INSTRUMENTS_HEADERS}
     ${UTILS_HEADERS}
     ${PRICING_HEADERS}
