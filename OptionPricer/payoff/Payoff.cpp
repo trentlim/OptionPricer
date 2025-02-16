@@ -1,7 +1,7 @@
 #include "Payoff.h"
-#include "Option.h"
+#include "OptionType.h"
 
-Payoff::Payoff(Option::Type type, double strike)
+Payoff::Payoff(OptionType type, double strike)
     : type_ { type }
     , K_ { strike }
 {
@@ -9,10 +9,12 @@ Payoff::Payoff(Option::Type type, double strike)
 
 double Payoff::operator()(double spot) const
 {
+    using enum OptionType;
+
     switch (type_) {
-    case Option::Type::call:
+    case call:
         return std::max(spot - K_, 0.0);
-    case Option::Type::put:
+    case put:
         return std::max(K_ - spot, 0.0);
     default:
         throw std::invalid_argument("Invalid Option Type");

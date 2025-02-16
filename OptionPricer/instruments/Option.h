@@ -2,6 +2,7 @@
 #define OPTION_H
 
 #include "Instrument.h"
+#include "OptionType.h"
 #include "Random.h"
 #include <cmath>
 #include <memory>
@@ -10,12 +11,7 @@ class Payoff;
 
 class Option : public Instrument {
 public:
-    enum class Type {
-        put,
-        call,
-    };
-
-    Option(Type type, double S, double K, double r, double sigma, double T);
+    Option(OptionType type, double S, double K, double r, double sigma, double T);
 
     double S() const { return S_; }
     double K() const { return K_; }
@@ -27,7 +23,7 @@ protected:
     void perform_calculations() override;
 
 private:
-    Type type_ {}; // Call or Put
+    OptionType type_ {}; // Call or Put
 
     double S_ {}; // Spot price of underlying
     double K_ {}; // Strike price

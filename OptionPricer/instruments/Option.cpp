@@ -1,9 +1,10 @@
 #include "Option.h"
+#include "OptionType.h"
 #include "Payoff.h"
 #include <memory>
 #include <stdexcept>
 
-Option::Option(Type type, double S, double K, double r, double sigma, double T)
+Option::Option(OptionType type, double S, double K, double r, double sigma, double T)
     : type_ { type }
     , S_ { S }
     , K_ { K }
