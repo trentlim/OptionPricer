@@ -3,7 +3,7 @@
 
 #include "Instrument.h"
 #include "OptionType.h"
-#include "Payoff.h"
+#include "Payoffs.h"
 #include "Random.h"
 #include <cmath>
 #include <memory>

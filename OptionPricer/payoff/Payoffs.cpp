@@ -1,4 +1,4 @@
-#include "Payoff.h"
+#include "Payoffs.h"
 #include "OptionType.h"
 
 Payoff::Payoff(OptionType type, double strike)
@@ -7,7 +7,12 @@ Payoff::Payoff(OptionType type, double strike)
 {
 }
 
-double Payoff::operator()(double spot) const
+VanillaPayoff::VanillaPayoff(OptionType type, double strike)
+    : Payoff { type, strike }
+{
+}
+
+double VanillaPayoff::operator()(double spot) const
 {
     using enum OptionType;
 

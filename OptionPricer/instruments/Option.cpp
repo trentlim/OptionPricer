@@ -1,6 +1,6 @@
 #include "Option.h"
 #include "OptionType.h"
-#include "Payoff.h"
+#include "Payoffs.h"
 #include <memory>
 #include <stdexcept>
 
@@ -11,7 +11,7 @@ Option::Option(OptionType type, double S, double K, double r, double sigma, doub
     , r_ { r }
     , sigma_ { sigma }
     , T_ { T }
-    , payoff_ { std::make_shared<Payoff>(type, K) }
+    , payoff_ { std::make_shared<VanillaPayoff>(type, K) }
 {
     if (S <= 0.0)
         throw std::invalid_argument("Underlying price S must be greater than 0.");
