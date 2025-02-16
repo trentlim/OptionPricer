@@ -3,11 +3,10 @@
 
 #include "Instrument.h"
 #include "OptionType.h"
+#include "Payoff.h"
 #include "Random.h"
 #include <cmath>
 #include <memory>
-
-class Payoff;
 
 class Option : public Instrument {
 public:
