@@ -1,5 +1,5 @@
-#ifndef PAYOFF_H
-#define PAYOFF_H
+#ifndef PAYOFFS_H
+#define PAYOFFS_H
 
 #include "OptionType.h"
 #include <cmath>
