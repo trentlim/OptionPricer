@@ -2,7 +2,6 @@
 #define VANILLAOPTION_H
 
 #include "Option.h"
-#include "OptionType.h"
 
 class VanillaOption : public Option {
 public:
