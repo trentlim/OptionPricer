@@ -4,8 +4,6 @@
 #include "Instrument.h"
 #include "OptionType.h"
 #include "Payoffs.h"
-#include "Random.h"
-#include <cmath>
 #include <memory>
 
 class Option : public Instrument {
@@ -19,18 +17,15 @@ public:
     double T() const { return T_; }
 
 protected:
-    void perform_calculations() override;
+    void perform_calculations() override = 0;
 
-private:
     OptionType type_ {}; // Call or Put
-
     double S_ {}; // Spot price of underlying
     double K_ {}; // Strike price
     double r_ {}; // Risk-free rate
     double sigma_ {}; // Volatility
     double T_ {}; // Time to maturity
-
-    std::shared_ptr<Payoff> payoff_ {};
+    std::shared_ptr<Payoff> payoff_;
 };
 
 #endif

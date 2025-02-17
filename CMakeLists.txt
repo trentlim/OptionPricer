@@ -6,7 +6,6 @@ set(CMAKE_CXX_STANDARD 23)
 include_directories(OptionPricer)
 include_directories(OptionPricer/instruments)
 include_directories(OptionPricer/payoff)
-include_directories(OptionPricer/pricing)
 include_directories(OptionPricer/utils)
 
 file(GLOB APP_SOURCES "OptionPricer/*.cpp")
@@ -17,7 +16,6 @@ file(GLOB APP_HEADERS "OptionPricer/*.h")
 file(GLOB INSTRUMENTS_HEADERS "OptionPricer/instruments/*.h")
 file(GLOB PAYOFF_HEADERS "OptionPricer/payoff/*.h")
 file(GLOB UTILS_HEADERS "OptionPricer/utils/*.h")
-file(GLOB PRICING_HEADERS "OptionPricer/pricing/*.h")
 
 add_executable(OptionPricer 
     ${APP_SOURCES} 
@@ -28,7 +26,6 @@ add_executable(OptionPricer
     ${INSTRUMENTS_HEADERS}
     ${PAYOFF_HEADERS} 
     ${UTILS_HEADERS}
-    ${PRICING_HEADERS}
 )
 
 
