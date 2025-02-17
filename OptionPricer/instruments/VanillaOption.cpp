@@ -7,7 +7,7 @@
 VanillaOption::VanillaOption(OptionType type, double S, double K, double r, double sigma, double T)
     : Option { type, S, K, r, sigma, T }
 {
-    payoff_ = std::make_shared<VanillaPayoff>(type, K);
+    payoff_ = std::make_unique<VanillaPayoff>(type, K);
 }
 
 void VanillaOption::perform_calculations()

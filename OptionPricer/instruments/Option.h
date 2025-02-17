@@ -2,14 +2,13 @@
 #define OPTION_H
 
 #include "Instrument.h"
-#include "OptionType.h"
+#include "Payoffs.h"
 #include <memory>
-
-class Payoff;
 
 class Option : public Instrument {
 public:
     Option(OptionType type, double S, double K, double r, double sigma, double T);
+    ~Option() override = default;
 
     double S() const { return S_; }
     double K() const { return K_; }
@@ -26,7 +25,7 @@ protected:
     double r_ {}; // Risk-free rate
     double sigma_ {}; // Volatility
     double T_ {}; // Time to maturity
-    std::shared_ptr<Payoff> payoff_;
+    std::unique_ptr<Payoff> payoff_;
 };
 
 #endif
