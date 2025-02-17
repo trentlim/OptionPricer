@@ -1,5 +1,6 @@
 #include "VanillaOption.h"
 #include "OptionType.h"
+#include "Payoffs.h"
 #include "Random.h"
 #include <memory>
 

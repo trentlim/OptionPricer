@@ -3,8 +3,9 @@
 
 #include "Instrument.h"
 #include "OptionType.h"
-#include "Payoffs.h"
 #include <memory>
+
+class Payoff;
 
 class Option : public Instrument {
 public:
