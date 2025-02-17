@@ -1,5 +1,7 @@
 #include "Payoffs.h"
 #include "OptionType.h"
+#include <cmath>
+#include <stdexcept>
 
 Payoff::Payoff(OptionType type, double strike)
     : type_ { type }

@@ -2,8 +2,6 @@
 #define PAYOFFS_H
 
 #include "OptionType.h"
-#include <cmath>
-#include <stdexcept>
 
 class Payoff {
 public:
